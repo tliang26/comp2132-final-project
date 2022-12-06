@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    background-image: url('../images/french-revolution-execution.webp');
+    background-color: $dark-shade;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+// ul {
+//     list-style-type: "\2665 ";
+// }
+// li {
+//     padding: 0 0 0.5em 0.5em;
+//     font-size: 0.95rem;
+// }
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1.0rem; }
+
+p {
+    line-height: 1.36;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .1s ease;
+    overflow-wrap: break-word;
+}
+a:link, a:visited {
+    color: $main-color;
+}
+a:hover, a:focus, a:active {
+    color: $dark-shade;
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    padding: $element-gap;
+}
+
+section {
+    border: 2px solid $main-color;
+    border-radius: $element-gap;
+    background-color: #FFF;
+    box-shadow: 2px 2px 6px 0 $dark-shade;
+    padding: $element-gap;
+    margin-bottom: $element-gap;
+}
+
+button {
+    background-color: $main-color;
+    color: $light-shade;
+    border-radius: $border-radius;
+    border: none;
+    padding: $border-radius $element-gap;
+    cursor: pointer;
+}
+
+.section-noscript {
+    background-color: $dark-shade;
+    color: #FFF;
+    width: 100%;
+
+    a:link, a:visited {
+        color: #FFF;
+        text-decoration: underline;
+        transition: all .3s ease;
+    }
+
+    a:hover, a:focus, a:active {
+        color: $main-color;
+        text-decoration: underline;
+    }
+}
+
+.section-popup {
+    min-width: 260px;
+    max-width: 400px;
+    background-color: $dark-accent;
+    color: #FFF;
+    border: none;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        border: 2px solid $dark-shade;
+        background-color: $light-shade;
+        color: $dark-shade;
+    }
+}
+
+#container-body {
+    width: 100%;
+    max-width: 1000px;
+    margin: $element-gap auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: $dark-shade;
+    border-radius: $border-radius;
+}
+
+#section-letters {
+    text-align: center;
+}
+
+#section-keyboard {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $border-radius $border-radius;
+
+    article {
+        border: 1px solid $dark-accent;
+        padding: $border-radius;
+    }
+}

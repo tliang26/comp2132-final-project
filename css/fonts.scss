@@ -1,0 +1,25 @@
+/* headings */
+@font-face {
+    font-family: 'Big Space';
+    src: url('../fonts/big-space/bigspace-rpkx-webfont.woff2') format('woff2'),
+         url('../fonts/big-space/bigspace-rpkx-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap');
+
+
+body {
+    font-family: 'Montserrat', Verdana, sans-serif;
+    font-weight: 300;
+
+    strong {
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Big Space', Times, serif;	
+    }
+}

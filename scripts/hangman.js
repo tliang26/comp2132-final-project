@@ -1,6 +1,7 @@
 const lettersSection = document.getElementById("section-letters");
 
-apiURL = "https://www.wordgamedb.com/api/v1/words/random";
+const apiURL          = "https://www.wordgamedb.com/api/v1/words/random";
+const minNumOfLetters = 5;
 
 function fetchWord(){
     fetch(apiURL)
@@ -10,7 +11,7 @@ function fetchWord(){
             }
         })
         .then(function(data){
-            if(data.numLetters >= 4){
+            if(data.numLetters >= minNumOfLetters){
                 lettersSection.innerHTML += `<p>${data.word}</p>`;
             }
             else{

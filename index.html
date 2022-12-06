@@ -19,16 +19,18 @@
         <script src="https://code.jquery.com/jquery-3.6.1.js"       
                 integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
                 crossorigin="anonymous"></script>
+        <script src="scripts/CircleType-master/dist/circletype.min.js" defer></script>
+        <script src="scripts/heading.js" defer></script>
         <script src="scripts/hangman.js" defer></script>
             
         <!-- Styles -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body>
         <div id="container-body">
             <header>
-                <h1>Hangman Game</h1>
+                <h1 id="h1-heading">Welcome to Hangman</h1>
             </header>
 
             <main>
@@ -40,7 +42,10 @@
                 </noscript>
 
                 <div class="container-content">
-                    <section id="section-letters"></section>
+                    <section id="section-letters">
+                        <img src="images/hangman/0.jpg" 
+                             alt="Changing hangman image that will add a step with each wrong guess">
+                    </section>
                     <section id="section-keyboard">
                         <article>A</article>
                         <article>B</article>
@@ -74,6 +79,7 @@
 
             <footer>
                 <p><small>&copy; Tracy Liang 2022</small></p>
+                <address>Contact: <a href="mailto:tliang18@my.bcit.ca">tliang18@my.bcit.ca</a></address>
             </footer>
         </div>
     </body>
