@@ -3,9 +3,20 @@ header {
     color: $dark-accent;
     padding: $element-gap;
     border-radius: inherit;
+    position: relative;
 
     * {
         margin: 0;
+    }
+
+    button {
+        border: 2px solid $dark-shade;
+        background-color: $light-shade;
+        color: $dark-shade;
+        font-size: 0.8rem;
+        position: fixed;
+        top: $element-gap;
+        right: $element-gap;
     }
 
     h1 { 
@@ -36,7 +47,6 @@ footer {
         color: $dark-shade;
         text-decoration: underline;
     }
-
     a:hover, a:focus, a:active {
         color: $dark-accent;
         text-decoration: underline;

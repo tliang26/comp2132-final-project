@@ -19,8 +19,10 @@
         <script src="https://code.jquery.com/jquery-3.6.1.js"       
                 integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
                 crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/599357054b.js" crossorigin="anonymous"></script>
         <script src="scripts/CircleType-master/dist/circletype.min.js" defer></script>
         <script src="scripts/heading.js" defer></script>
+        <script src="scripts/popups.js" defer></script>
         <script src="scripts/hangman.js" defer></script>
             
         <!-- Styles -->
@@ -31,6 +33,7 @@
         <div id="container-body">
             <header>
                 <h1 id="h1-heading">Welcome to Hangman</h1>
+                <button id="button-instructions">Instructions</button>
             </header>
 
             <main>
@@ -41,45 +44,70 @@
                     </section>
                 </noscript>
 
-                <div class="container-content">
+                <div class="container-popup" id="instructions-popup">
+                    <section class="section-popup">
+                        <div class="popup-heading">
+                            <h2>Instructions:</h2>
+                            <i class="fa-solid fa-xmark" id="icon-close-instructions"></i>
+                        </div>
+                        <p>Hangman instructions placeholder.</p>
+                        <button id="button-start-game">Start Game</button>
+                    </section>
+                </div>
+
+                <div class="container-popup" id="results-popup">
+                    <section class="section-popup">
+                        <h2>Congrats</h2>
+                        <p>You won.</p>
+                        <button id="button-play-again">Play Again</button>
+                    </section>
+                </div>
+
+                <div class="container-game">
                     <section id="section-letters">
                         <img src="images/hangman/0.jpg" 
-                             alt="Changing hangman image that will add a step with each wrong guess">
+                             alt="Changing hangman image that will add a step with each wrong guess"
+                             id="img-hangman">
+                        <div id="container-blanks"></div>
+                        <div id="container-hint"></div>
                     </section>
                     <section id="section-keyboard">
-                        <article>A</article>
-                        <article>B</article>
-                        <article>C</article>
-                        <article>D</article>
-                        <article>E</article>
-                        <article>F</article>
-                        <article>G</article>
-                        <article>H</article>
-                        <article>I</article>
-                        <article>J</article>
-                        <article>K</article>
-                        <article>L</article>
-                        <article>M</article>
-                        <article>N</article>
-                        <article>O</article>
-                        <article>P</article>
-                        <article>Q</article>
-                        <article>R</article>
-                        <article>S</article>
-                        <article>T</article>
-                        <article>U</article>
-                        <article>V</article>
-                        <article>W</article>
-                        <article>X</article>
-                        <article>Y</article>
-                        <article>Z</article>
+                        <div id="container-keys">
+                            <article class="keyboard-letter">A</article>
+                            <article class="keyboard-letter">B</article>
+                            <article class="keyboard-letter">C</article>
+                            <article class="keyboard-letter">D</article>
+                            <article class="keyboard-letter">E</article>
+                            <article class="keyboard-letter">F</article>
+                            <article class="keyboard-letter">G</article>
+                            <article class="keyboard-letter">H</article>
+                            <article class="keyboard-letter">I</article>
+                            <article class="keyboard-letter">J</article>
+                            <article class="keyboard-letter">K</article>
+                            <article class="keyboard-letter">L</article>
+                            <article class="keyboard-letter">M</article>
+                            <article class="keyboard-letter">N</article>
+                            <article class="keyboard-letter">O</article>
+                            <article class="keyboard-letter">P</article>
+                            <article class="keyboard-letter">Q</article>
+                            <article class="keyboard-letter">R</article>
+                            <article class="keyboard-letter">S</article>
+                            <article class="keyboard-letter">T</article>
+                            <article class="keyboard-letter">U</article>
+                            <article class="keyboard-letter">V</article>
+                            <article class="keyboard-letter">W</article>
+                            <article class="keyboard-letter">X</article>
+                            <article class="keyboard-letter">Y</article>
+                            <article class="keyboard-letter">Z</article>
+                        </div>
+                        <div id="container-warning"></div>
                     </section>
                 </div>
             </main>
 
             <footer>
                 <p><small>&copy; Tracy Liang 2022</small></p>
-                <address>Contact: <a href="mailto:tliang18@my.bcit.ca">tliang18@my.bcit.ca</a></address>
+                <address>Contact: <a href="mailto:tliang18@my.bcit.ca" target="_blank">tliang18@my.bcit.ca</a></address>
             </footer>
         </div>
     </body>

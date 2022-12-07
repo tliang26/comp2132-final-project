@@ -347,9 +347,19 @@ header {
   color: #94463a;
   padding: 20px;
   border-radius: inherit;
+  position: relative;
 }
 header * {
   margin: 0;
+}
+header button {
+  border: 2px solid #3d3937;
+  background-color: #f0f0e9;
+  color: #3d3937;
+  font-size: 0.8rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
 header h1 {
   font-size: 2.4rem;
@@ -442,7 +452,6 @@ a:hover, a:focus, a:active {
 
 main {
   flex: 1;
-  padding: 20px;
 }
 
 section {
@@ -463,6 +472,120 @@ button {
   cursor: pointer;
 }
 
+.article-blanks {
+  width: 50px;
+  height: 50px;
+  border-bottom: 3px solid #3d3937;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+#container-body {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #3d3937;
+  border-radius: 10px;
+}
+
+#section-letters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+#section-letters #container-blanks {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#section-keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+#section-keyboard #container-warning {
+  display: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: auto;
+  border-radius: 10px;
+}
+#section-keyboard #container-warning * {
+  margin: 0;
+}
+#section-keyboard #container-keys {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 10px;
+}
+#section-keyboard #container-keys article {
+  width: 40px;
+  border: 1px solid #94463a;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+}
+.container-popup .section-popup {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  background-color: #94463a;
+  color: white;
+  border: none;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-popup .section-popup .popup-heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container-popup .section-popup .popup-heading h2 {
+  margin: 0;
+}
+.container-popup .section-popup .popup-heading i {
+  font-size: 1.5rem;
+}
+.container-popup .section-popup p {
+  width: 100%;
+}
+.container-popup .section-popup button {
+  border: 2px solid #3d3937;
+  background-color: #f0f0e9;
+  color: #3d3937;
+}
+
 .section-noscript {
   background-color: #3d3937;
   color: #FFF;
@@ -476,53 +599,4 @@ button {
 .section-noscript a:hover, .section-noscript a:focus, .section-noscript a:active {
   color: #f9c351;
   text-decoration: underline;
-}
-
-.section-popup {
-  min-width: 260px;
-  max-width: 400px;
-  background-color: #94463a;
-  color: #FFF;
-  border: none;
-  z-index: 100;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.section-popup button {
-  border: 2px solid #3d3937;
-  background-color: #f0f0e9;
-  color: #3d3937;
-}
-
-#container-body {
-  width: 100%;
-  max-width: 1000px;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  color: #3d3937;
-  border-radius: 10px;
-}
-
-#section-letters {
-  text-align: center;
-}
-
-#section-keyboard {
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 10px;
-}
-#section-keyboard article {
-  border: 1px solid #94463a;
-  padding: 10px;
 }
