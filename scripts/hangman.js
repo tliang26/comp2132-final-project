@@ -1,7 +1,10 @@
+/* ---------- 
+Variables 
+---------- */
+
 const displayLettersSection = document.getElementById("section-letters");
 const blanksSection         = document.getElementById("container-blanks");
 const hintSection           = document.getElementById("container-hint");
-const $keyboardLetters      = $(".keyboard-letter");
 const $noticeBox            = $("#container-warning");
 const $hangmanImg           = $("#img-hangman");
 let $currentLetter;
@@ -13,9 +16,14 @@ let currentWord          = '';
 let wrongLetterCounter   = 0;
 let correctLetterCounter = 0;
 let letterMatched        = false;
+let success              = false;
+
+/* ---------- 
+Function calls 
+---------- */
 
 // when user clicks on any one of the keyboard letters
-$keyboardLetters.click(clickKeyboardLetter);
+$(".keyboard-letter").click(clickKeyboardLetter);
 
 /* ---------- 
 Functions 
@@ -50,11 +58,12 @@ function clickKeyboardLetter(){
             $currentLetter.text(`${currentWord[i-1].toUpperCase()}`);
             $noticeBox.css({"background-color": "#80b64e",
                             "display": "block"})
-                      .html("<p>Yes, this letter is in the word!</p>");
+                      .html(`<p>Yes, this letter is in the word! You have ${maxWrongAttempts-wrongLetterCounter}/${maxWrongAttempts} incorrect chances left.</p>`);
 
             // if the clicked key is the last letter needed to finish the word
             if(correctLetterCounter == currentWord.length){
-                popupAnimationHandler = requestAnimationFrame(resultsFadeIn(true));
+                success = true;
+                popupAnimationHandler = requestAnimationFrame(resultsFadeIn);
                 return;
             }
         }
@@ -65,13 +74,14 @@ function clickKeyboardLetter(){
         wrongLetterCounter++;
         $noticeBox.css({"background-color": "#f44336",
                         "display": "block"})
-                  .html(`<p>Uh oh! You have ${maxWrongAttempts-wrongLetterCounter}/${maxWrongAttempts} attempts left.</p>`);
+                  .html(`<p>Uh oh! You have ${maxWrongAttempts-wrongLetterCounter}/${maxWrongAttempts} incorrect chances left.</p>`);
         $hangmanImg.attr("src", `images/hangman/${wrongLetterCounter}.jpg`);
     }
 
     // if the available attempts run out
     if(wrongLetterCounter == (maxWrongAttempts)){
-        popupAnimationHandler = requestAnimationFrame(resultsFadeIn(false));
+        success = false;
+        popupAnimationHandler = requestAnimationFrame(resultsFadeIn);
         return;
     }
 }

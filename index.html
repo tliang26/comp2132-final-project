@@ -21,6 +21,7 @@
                 crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/599357054b.js" crossorigin="anonymous"></script>
         <script src="scripts/CircleType-master/dist/circletype.min.js" defer></script>
+        <script src="scripts/LetterKey.js" defer></script>
         <script src="scripts/heading.js" defer></script>
         <script src="scripts/popups.js" defer></script>
         <script src="scripts/hangman.js" defer></script>
@@ -50,15 +51,23 @@
                             <h2>Instructions:</h2>
                             <i class="fa-solid fa-xmark" id="icon-close-instructions"></i>
                         </div>
-                        <p>Hangman instructions placeholder.</p>
+                        <p>In this game of Hangman, there are words from five categories:</p>
+                        <ul>
+                            <li>Animal</li>
+                            <li>Country</li>
+                            <li>Food</li>
+                            <li>Plant</li>
+                            <li>Sport</li>
+                        </ul>
+                        <p>Click on the letters below the blank spaces to guess the random word. In each game, you have up to <strong>six (6)</strong> chances to guess incorrect letters, before your stick person is hung! Letters that have been guessed cannot be clicked again.</p>
+                        <p>If you've understood the rules, click the "Start Game" button below to play! At any point during the game, if you want to revisit these instructions, you can click the "Instructions" button found on the top right corner of your screen.</p>
                         <button id="button-start-game">Start Game</button>
                     </section>
                 </div>
 
                 <div class="container-popup" id="results-popup">
                     <section class="section-popup">
-                        <h2>Congrats</h2>
-                        <p>You won.</p>
+                        <div id="popup-display"></div>
                         <button id="button-play-again">Play Again</button>
                     </section>
                 </div>
@@ -72,34 +81,7 @@
                         <div id="container-hint"></div>
                     </section>
                     <section id="section-keyboard">
-                        <div id="container-keys">
-                            <article class="keyboard-letter">A</article>
-                            <article class="keyboard-letter">B</article>
-                            <article class="keyboard-letter">C</article>
-                            <article class="keyboard-letter">D</article>
-                            <article class="keyboard-letter">E</article>
-                            <article class="keyboard-letter">F</article>
-                            <article class="keyboard-letter">G</article>
-                            <article class="keyboard-letter">H</article>
-                            <article class="keyboard-letter">I</article>
-                            <article class="keyboard-letter">J</article>
-                            <article class="keyboard-letter">K</article>
-                            <article class="keyboard-letter">L</article>
-                            <article class="keyboard-letter">M</article>
-                            <article class="keyboard-letter">N</article>
-                            <article class="keyboard-letter">O</article>
-                            <article class="keyboard-letter">P</article>
-                            <article class="keyboard-letter">Q</article>
-                            <article class="keyboard-letter">R</article>
-                            <article class="keyboard-letter">S</article>
-                            <article class="keyboard-letter">T</article>
-                            <article class="keyboard-letter">U</article>
-                            <article class="keyboard-letter">V</article>
-                            <article class="keyboard-letter">W</article>
-                            <article class="keyboard-letter">X</article>
-                            <article class="keyboard-letter">Y</article>
-                            <article class="keyboard-letter">Z</article>
-                        </div>
+                        <div id="container-keys"></div>
                         <div id="container-warning"></div>
                     </section>
                 </div>

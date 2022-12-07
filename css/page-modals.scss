@@ -12,21 +12,17 @@
     visibility: hidden;
 
     .section-popup {
+        @include colors($dark-accent, white);
+        @include flexbox(column, nowrap, center, center, 0, 0);
         margin: auto;
         width: 90%;
         max-width: 600px;
-        background-color: $dark-accent;
-        color: white;
         border: none;
-        z-index: 100;  
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        z-index: 100;
 
         .popup-heading {
             width: 100%;
-            display: flex;
-            justify-content: space-between;
+            @include flexbox(row, nowrap, space-between, flex-start, 0, 0);
 
             h2 {
                 margin: 0;
@@ -34,28 +30,22 @@
 
             i {
                 font-size: 1.5rem;
+                cursor: pointer;
             }
         }
 
         p {
             width: 100%;
         }
-    
-        button {
-            border: 2px solid $dark-shade;
-            background-color: $light-shade;
-            color: $dark-shade;
-        }
     }
 }
 
 .section-noscript {
-    background-color: $dark-shade;
-    color: #FFF;
+    @include colors($dark-shade, white);
     width: 100%;
 
     a:link, a:visited {
-        color: #FFF;
+        color: white;
         text-decoration: underline;
         transition: all .3s ease;
     }

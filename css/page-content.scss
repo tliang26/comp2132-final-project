@@ -14,13 +14,15 @@ img {
     margin: 0 auto;
 }
 
-// ul {
-//     list-style-type: "\2665 ";
-// }
-// li {
-//     padding: 0 0 0.5em 0.5em;
-//     font-size: 0.95rem;
-// }
+ul {
+    list-style-type: "\2620 ";
+    width: 100%;
+    margin: 0;
+}
+li {
+    padding: 0 0 0.5em 0.5em;
+    font-size: 0.95rem;
+}
 
 h1 { font-size: 1.6rem; }
 h2 { font-size: 1.4rem; }
@@ -52,19 +54,16 @@ main {
 }
 
 section {
-    border: 2px solid $main-color;
-    border-radius: $element-gap;
-    background-color: #FFF;
-    box-shadow: 2px 2px 6px 0 $dark-shade;
+    @include border-with-shadow(2px, $main-color);
+    background-color: white;
     padding: $element-gap;
     margin-bottom: $element-gap;
 }
 
 button {
-    background-color: $main-color;
-    color: $light-shade;
+    @include colors($light-shade, $dark-shade);
+    border: 2px solid $dark-shade;
     border-radius: $border-radius;
-    border: none;
     padding: $border-radius $element-gap;
     cursor: pointer;
 }
@@ -80,38 +79,25 @@ button {
 }
 
 #container-body {
+    @include flexbox(column, nowrap, flex-start, center, 0, 0);
     width: 100%;
     max-width: 900px;
-    margin: $element-gap auto;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
+    margin: $element-gap auto;
     color: $dark-shade;
     border-radius: $border-radius;
 }
 
 #section-letters {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: $element-gap;
+    @include flexbox(column, nowrap, center, center, $element-gap, 0);
 
     #container-blanks {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: $element-gap;
-        justify-content: center;
-        align-items: center;
+        @include flexbox(row, wrap, center, center, 0, $element-gap);
     }
 }
 
 #section-keyboard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: $element-gap;
+    @include flexbox(column, nowrap, center, center, $element-gap, 0);
 
     #container-warning {
         display: none;
@@ -127,11 +113,7 @@ button {
     }
 
     #container-keys {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: $border-radius $border-radius;
+        @include flexbox(row, wrap, center, center, $border-radius, $border-radius);
 
         article {
             width: 40px;

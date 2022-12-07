@@ -1,0 +1,19 @@
+@mixin border-with-shadow($border-width, $border-color){
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    box-shadow: 2px 2px 6px 0 $dark-shade;
+}
+
+@mixin colors($bck-color, $font-color){
+    background-color: $bck-color;
+    color: $font-color;
+}
+
+@mixin flexbox($direction, $wrap, $justify, $align, $row-gap, $col-gap){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $row-gap $col-gap;
+}
